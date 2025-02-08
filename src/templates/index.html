@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Generator</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Image Display Section -->
+        <div id="generated_image">
+            <img id="image_result" src="" alt="Generated AI Image">
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loading">
+            <p>Generating Image...</p>
+            <div class="spinner"></div>
+        </div>
+
+        <!-- User Input Section -->
+        <h2>What can I help with?</h2>
+        <div class="container">
+            <textarea id="prompt" placeholder="Enter your prompt here..." rows="4"></textarea>
+            <button onclick="generateImage()" aria-label="Generate Image">
+                <i class="fas fa-image"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer">Developed & Managed by Rahul Tawar</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

@@ -11,32 +11,38 @@
 </head>
 
 <body>
-
     <div class="wrapper">
-        <!-- Image Display Section -->
-        <div id="generated_image">
-            <img id="image_result" src="" alt="Generated AI Image">
-        </div>
 
-        <!-- Loading Indicator -->
-        <div id="loading">
+        <!-- Loading Spinner -->
+        <div id="loading" style="display: none;">
             <p>Generating Image...</p>
             <div class="spinner"></div>
+        </div>
+
+        <!-- Generated Image Section -->
+        <div id="generated_image" style="display: none; position: relative;">
+            <img id="generatedImage" src="" alt="Generated AI Image"
+                style="display: block; width: 100%; max-width: 700px; margin: 0 auto;" />
+
+            <!-- Download Button -->
+            <a id="downloadLink" href="" download="generated-image.png" class="download-btn">
+                <i class="fas fa-arrow-down"></i>
+            </a>
         </div>
 
         <!-- User Input Section -->
         <h2>What can I help with?</h2>
         <div class="container">
             <textarea id="prompt" placeholder="Enter your prompt here..." rows="4"></textarea>
-            <button onclick="generateImage()" aria-label="Generate Image">
+            <button onclick="generateImage()" aria-label="Generate AI Image">
                 <i class="fas fa-image"></i>
             </button>
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer>
-        <p class="footer">Developed & Managed by Rahul Tawar</p>
+        <p>Developed & Managed by Rahul Tawar</p>
     </footer>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>

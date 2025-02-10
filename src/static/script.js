@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".container");
     const heading = document.querySelector("h2");
     const generateBtn = document.querySelector("button");
+    const generatedImageSection = document.getElementById("generated_image");
+    const downloadLink = document.getElementById("downloadLink");
 
     // Move UI elements to bottom and hide heading
     const moveElementsToBottom = () => {
@@ -19,6 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
         generateBtn.disabled = isLoading;
         generateBtn.style.opacity = isLoading ? "0.5" : "1";
         generateBtn.style.cursor = isLoading ? "not-allowed" : "pointer";
+
+        // Clear previous image while loading a new one
+        if (isLoading) {
+            imageElement.src = "";
+            generatedImageSection.style.display = "none";
+        }
     };
 
     // Display temporary messages (success/error)
@@ -58,9 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
             if (data.status === "success" && data.image_url) {
                 // Set the image and download link
                 imageElement.src = data.image_url;
-                document.getElementById("downloadLink").href = data.image_url;
+                downloadLink.href = data.image_url;
 
-                document.getElementById("generated_image").style.display = "block"; // Show image section
+                generatedImageSection.style.display = "block"; // Show image section
                 showMessage("✅ Image generated successfully!", "success");
             } else {
                 console.error("Error:", data.message || "No image URL returned.");

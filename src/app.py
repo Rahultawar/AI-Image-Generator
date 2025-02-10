@@ -21,16 +21,16 @@ PROMPT_TEMPLATE = {
     "3": {
         "class_type": "KSampler",
         "inputs": {
-            "cfg": 8,
-            "denoise": 1,
+            "cfg": 12,
+            "denoise": 0.6,
             "latent_image": ["5", 0],
             "model": ["4", 0],
             "negative": ["7", 0],
             "positive": ["6", 0],
-            "sampler_name": "euler",
-            "scheduler": "normal",
+            "sampler_name": "dpmpp_2m",
+            "scheduler": "karras",
             "seed": 8566257,
-            "steps": 20
+            "steps": 60
         }
     },
     "4": {

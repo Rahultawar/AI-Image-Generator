@@ -1,6 +1,6 @@
 # AI Image Generator
 
-![AI Image Generator Demo](Image-Generation-Project.mp4)
+![AI Image Generator Demo](Image-Generation-Project.gif)
 
 This project is an AI-based image generator utilizing Flask for the web server, WebSockets for real-time communication, and ComfyUI integrated with Stable Diffusion for high-quality image generation based on user prompts.
 
